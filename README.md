@@ -1,9 +1,22 @@
 domeize ![version v0.2.0](https://img.shields.io/badge/version-v0.2.0-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 =============
-  domeize run in alpine shoud build like this : 
+ Tip: domeize run in alpine shoud build like this : 
   ```
   GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o dockerize1 
   ```
+Test:
+```
+ kubectl get pod ==> dmo-tomcat7-v1-8fi7e
+ echo "{{default .Env.AUTO_PORT0 "8080"}}" > abc.tmpl
+ export NEED_PORTS=1
+ export  DOMEOS_SERVER_ADDR=http://192.168.152.133:8081
+ export  CLUSTER_NAME=k8s
+ export  MY_POD_NAMESPACE=default
+ export  MY_POD_NAME=dmo-tomcat7-v1-8fi7e
+ ./dockerize -template abc.tmpl:abc
+ kubectl get pod dmo-tomcat7-v1-0rz6q -o yaml | grep annotations -A 20
+
+```
 =============
 domeize if forked from dockerize and added some more function to meet needs for DomeOS.
 
