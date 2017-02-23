@@ -1,5 +1,8 @@
 domeize ![version v0.2.0](https://img.shields.io/badge/version-v0.2.0-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 =============
+  domeize run in alpine shoud build like this : 
+  ```GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o dockerize1```
+=============
 domeize if forked from dockerize and added some more function to meet needs for DomeOS.
 
 Utility to simplify running applications in docker containers.
